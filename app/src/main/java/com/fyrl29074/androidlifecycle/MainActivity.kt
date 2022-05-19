@@ -9,6 +9,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        setListeners()
     }
 
     private fun setListeners() {
@@ -18,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.fragment).setOnClickListener {
-
+            val intent = Intent(this, NavigationActivity::class.java)
+            startActivity(intent)
         }
     }
 }
